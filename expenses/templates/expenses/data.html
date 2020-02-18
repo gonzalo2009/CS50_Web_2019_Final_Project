@@ -1,0 +1,122 @@
+{% extends "expenses/base.html" %}
+
+{% block title %}
+Expenses
+{% endblock %}
+
+{% block body %}
+
+
+<h1 class="center-header">Expenses</h1>
+<div class="record">
+    <h3 >Record your expenses here.</h3>
+</div>
+{% if message %}
+<p id="display-message" class="center">{{ message }}</p>
+{% endif %}
+<div class="form-group1">
+    <h5>Add or delete a type of expense</h5>
+</div>
+    <div style="overflow:auto">
+        <div class="expense-form">
+            <form method="POST" action="{% url 'expenses' %}">
+                {% csrf_token %}
+                <input type="text" name="form" value="expense_type" hidden>
+                <input type="text" class="form-control" placeholder="Add a new expense type" name="expense_type" autocomplete="off">  
+                <button type="submit" class="btn btn-primary">Add Type</button>
+            </form>
+        </div>
+        <div class="expense-form">
+            <form method="POST" action="{% url 'expenses' %}">
+                {% csrf_token %}
+                <input type="text" name="form" value="delete_expense_type" hidden>
+                <select class="form-control" name="expense_type_id">
+                    <optgroup>
+                        <option value="" selected>Delete an expense type</option>
+                        {% for expense_type in expense_types %}
+                        <option value="{{expense_type.id}}">{{ expense_type }}</option>
+                        {% endfor %}
+                    </optgroup>    
+                </select>
+                <button type="submit" class="btn btn-primary">Delete Type</button>
+            </form>
+        </div>
+     </div>
+   
+<div class="form-group1">
+    <h5>Add expenses</h5>
+</div>
+
+<form method="POST" action="{% url 'expenses' %}">
+    {% csrf_token %}
+    <input type="text" name="form" value="expense" hidden>
+    <div style="overflow:auto">
+        <div class="expense-form">
+            <select class="form-control" name="expense_id" id="expense-type-select">
+                <optgroup>
+                    <option value="" selected>Expense type</option>
+                    {% for expense_type in expense_types %}
+                    <option value="{{expense_type.id}}" >{{ expense_type }}</option>
+                    {% endfor %}
+                </optgroup>
+            </select>
+        </div>
+        <div class="expense-form">
+            <input class="form-control" type="number" step="0.01" min="0" name="amount" placeholder="Amount" oninput="validity.valid||(value='');">
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary expenses-btn">Add Expense</button>
+    </div>
+</form>
+<div class="form-group1">
+    <h5>Expense History</h5>
+</div>
+
+{% if expenses.all %}
+    <table id="table-lg" class="table table-detail">
+        <thead>
+            <th scope="col">Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+            <th scope="col"></th>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.expense_type }}</td>
+                <td>{{ expense.amount }}</td>
+                <td>{{ expense.date }}</td>
+                <td>
+                    <button class="btn btn-primary delete-expense" data-url="{% url 'delete_expense' expense.id %}">Delete</button>
+                </td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+    <table id="table-sm" class="table table-detail">
+        <thead>
+            <th scope="col" class="center">Expenses Data</th>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>
+                <ul>
+                    <li>Type: {{ expense.expense_type }}</li>
+                    <li>Amount: {{ expense.amount }}</li>
+                    <li>Date: {{ expense.date }}</li>
+                 </ul>   
+                 <div>
+                    <button class="btn btn-primary delete-expense" data-url="{% url 'delete_expense' expense.id %}">Delete</button>
+                 </div>   
+                </td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+{% else %}
+<h2 class="center-header">There are no expenses yet.</h2>
+{% endif %}
+{% endblock %}

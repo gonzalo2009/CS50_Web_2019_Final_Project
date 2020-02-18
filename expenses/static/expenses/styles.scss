@@ -1,0 +1,398 @@
+* {
+  box-sizing: border-box;
+}
+
+.container{
+  width:100%;
+  height: 100%;
+  margin-bottom: 10px;
+
+}
+
+.container3{
+  margin-top: 30px;
+  h1{
+    margin-bottom: 20px;
+  }
+}
+
+.name{
+  font-size: 20px;
+  font-weight: 480;
+}
+
+.form1{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    margin-top: 10vh;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 10px;
+}
+
+.form-group1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+
+.form-group2{
+    margin-top: 20px;
+    margin-bottom: 20px;         
+  }
+
+.form-group4, .btn-primary{
+  margin-top: 10px;
+  margin-bottom: 10px;  
+}
+
+.date-time{
+  width: 200px;
+   float: left;
+   margin-top: 10px;
+}
+
+.delete{
+  width: 150px;
+  float: right;
+}
+
+.container2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    textarea, .container-review{
+      border: 1px solid rgb(177, 177, 177);
+      border-radius: 10px;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+   textarea{
+      min-height: 150px; 
+    }
+
+    .container-review{
+      margin-bottom: 20px;
+    }
+}
+
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+  .modal-content{
+    border: 1px solid rgb(143, 143, 143);
+    border-radius: 10px;
+    width: 600px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .close{
+      float: right; 
+      color: rgb(109, 109, 109);  
+      font-weight: bold;
+    }
+
+    .item{
+      margin-top: 20px;
+      margin-left: 40px;
+      margin-right: 40px;  
+      }
+    }
+
+    #delete{
+      width: 72px;
+      margin: 4px;
+    } 
+    
+    #cancel{
+     width: 72px;
+     margin: 4px;
+    }
+  }
+
+
+#modal-confirm{
+  .btn-primary, .btn-secondary{
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+#quantity{
+  height: 30px;
+  width: 40px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+
+.center-header{
+  text-align: center;
+  margin-top: 30px;
+  
+}
+
+.message{
+  margin-top: 50px;
+}
+
+.category-name{
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.right{
+  text-align: right;
+}
+
+.center{
+  text-align: center;
+}
+
+.float-right{
+  float: right;
+}
+
+#load-btn{
+  margin-left: 15px;
+}
+
+.text-left{
+  text-indent: 30px;
+}
+
+.text-left-2{
+  text-indent: 80px;
+}
+
+.table-detail{
+  margin-top: 20px;
+}
+
+#modal-confirm {
+
+  .confirm-center{
+    display: table;
+    height: 100%;
+    width: 100%;
+
+    h5{
+      display: table-cell; 
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}
+
+.btn-menu{
+  margin: 0;
+}
+
+.item-container{
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+
+  #item-form{
+    margin-top: 40px;
+  }
+}
+
+#row-date-range{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+  
+  .start-date, .end-date{
+    width: 35%;
+    float: left;
+    padding-left: 10px;
+   padding-right: 10px;
+
+  }
+
+  .submit-date{
+    width: 30%;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #date-button{
+    margin-top: 32px;
+    margin-bottom: 0;
+    float: left;
+  }
+
+  .expense-form{
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .expenses-btn{
+    margin: 10px;
+  }
+
+  .delete-expense{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+
+  #r2{
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+
+  canvas{
+    margin-top: 20px;
+  }
+
+@media only screen and (max-width:995px) {
+
+  /* For mobile phones: */
+    .start-date, .end-date, .submit-date, .expense-form{
+      width: 100%;
+    }
+    #expense-type-select{
+      margin-bottom: 20px;
+    }
+
+    #date-button{
+      margin-top: 12px;
+    }
+
+    .modal{
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      
+    .modal-content{
+      border: 1px solid rgb(143, 143, 143);
+      border-radius: 10px;
+      width: 300px;
+      height: 250px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .close{
+        float: right; 
+        color: rgb(109, 109, 109);  
+        font-weight: bold;
+      }
+
+      .item{
+        margin-top: 20px;
+        margin-left: 40px;
+        margin-right: 40px;  
+        }
+      }
+
+      #delete{
+        width: 72px;
+        margin: 4px;
+      } 
+      
+      #cancel{
+      width: 72px;
+      margin: 4px;
+      }
+    }
+
+  }
+
+  
+  @media only screen and (min-width:511px) {
+    #table-sm, #charts-sm{
+    display: none;
+    }
+  }
+
+  @media only screen and (max-width:510px) {
+    #table-lg, #charts-lg{
+      display: none;
+    }
+      .form1{
+        width: 90vw;
+        margin-top: 5vh;
+      .form-group2, .form-group4{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      } 
+
+    }
+
+    #register-form, #login-form{
+      
+      p{
+        font-size: 15px;
+        margin: 5px;
+      }
+
+    }
+    
+  }
+
+   @media only screen and (min-width:291px) {
+    
+      p{
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  
+
+  
+
+  @media only screen and (max-width:290px) {
+    p{
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    #row-date-range{
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    
+  }
+
+#display-message{
+  color: red;
+}
+
+.record{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}

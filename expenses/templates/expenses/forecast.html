@@ -1,0 +1,33 @@
+{% extends "expenses/base.html" %}
+
+{% block title %}
+Forecast
+{% endblock %}
+
+{% block body %}
+<h1 class="center-header">Forecast</h1>
+<div id="row-date-range" data-url="{% url 'get_data'%}" style="overflow:auto">
+    <div class="col-date-range start-date menu">
+        <label for="start_id">Start date:</label>
+        <input class="form-control start" type="date" id="start_id" value="{{ start }}" min="2015-01-01"
+            max="{{ end }}">
+    </div>
+    <div class="col-date-range end-date main">
+        <label for="end_id">End date:</label>
+        <input class="form-control end" type="date" id="end_id" value="{{ end }}" min="2015-01-01">
+    </div>
+    <div class="col-date-range submit-date right">
+        <button type="submit" id="date-button" class="btn btn-primary">Set Date Range</button>
+    </div>
+</div>
+<div id="r2">
+    <p></p>
+</div>
+<div id="charts-lg">
+    <canvas id="chart1" class="chart" height="130"></canvas>
+</div>
+<div id="charts-sm">
+    <canvas id="chart3" class="chart" height="100" width="130"></canvas>
+</div>
+{% endblock %}
+

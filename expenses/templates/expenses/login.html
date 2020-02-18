@@ -1,0 +1,29 @@
+{% extends "expenses/base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+<form id="login-form" class="form1" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="form-group1">
+        <h1>Login</h1>
+    </div>
+    {% if message %}
+    <p id="display-message" class="center">{{ message }}</p>
+    {% endif %}
+    <div class="form-group2">
+        <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off">
+    </div>
+    <div class="form-group3">
+        <input type="password" class="form-control" placeholder="Password" name="password">
+    </div>
+    <div class="form-group4">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+    <div class="form-group5">
+        <p>Don't have an account yet? <a href="{% url 'register' %}">Register here</a>.</p>
+    </div>
+</form>
+{% endblock %}
